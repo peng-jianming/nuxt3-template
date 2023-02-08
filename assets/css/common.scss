@@ -1,0 +1,151 @@
+@font-face {
+    font-family: 'OPPOSans-R';
+    src: url(./font/OPPOSans/OPPOSans-R.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'OPPOSans-B';
+    src: url(./font/OPPOSans/OPPOSans-B.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'OPPOSans-L';
+    src: url(./font/OPPOSans/OPPOSans-L.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'OPPOSans-H';
+    src: url(./font/OPPOSans/OPPOSans-H.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'OPPOSans-M';
+    src: url(./font/OPPOSans/OPPOSans-M.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'FredokaOne-Regular';
+    src: url(./font/FredokaOne-Regular.ttf) format("truetype");
+}
+
+
+.mobile-under-bg-blue-four {
+    background-image: url('/img/font-under-line/mobile/blue-four.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+}
+
+.under-bg-blue-four {
+    background-image: url('/img/font-under-line/blue-four.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+}
+
+.mobile-under-bg-green-four {
+    background-image: url('/img/font-under-line/mobile/green-four.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+}
+
+.under-bg-green-four {
+    background-image: url('/img/font-under-line/green-four.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+}
+
+.mobile-under-bg-yellow-four {
+    background-image: url('/img/font-under-line/mobile/yellow-four.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+}
+
+.under-bg-yellow-four {
+    background-image: url('/img/font-under-line/yellow-four.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+}
+
+.mobile-under-bg-light-green-four {
+    background-image: url('/img/font-under-line/mobile/light-green-four.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+}
+
+.under-bg-light-green-four {
+    background-image: url('/img/font-under-line/light-green-four.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+}
+
+.mobile-under-bg-yellow-seven {
+    background-image: url('/img/font-under-line/mobile/yellow-seven.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+}
+
+.mobile-under-bg-yellow-five {
+    background-image: url('/img/font-under-line/mobile/yellow-five.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+}
+
+.under-bg-yellow-five {
+    background-image: url('/img/font-under-line/yellow-five.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+}
+
+@media screen and (min-width: 1920px) {
+    html {
+        font-size: 192px;
+    }
+}
+
+@media screen and (max-width: 1920px) {
+    html {
+        font-size: 10vw;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    html {
+        font-size: 120px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    html {
+        font-size: 10vw;
+    }
+}
+
+html,
+body {
+    max-width: 1920px;
+    margin: 0 auto;
+    position: relative;
+    background-color: #FFFDF7;
+    font-family: 'OPPOSans-R' !important;
+}
+
+.hidden-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.custom-under-line {
+    text-decoration: underline #FFE100;
+    text-decoration-skip-ink: none;
+    text-underline-offset: -0.2em;
+    text-decoration-thickness: 0.35em;
+}
