@@ -1,18 +1,19 @@
 <script lang='ts' setup>
 onMounted(() => {
-  loadScript('https://webapi.amap.com/maps?v=2.0&key=b65ac20719e827208fb4c94bf9bc48e5').then(
-    () => {
-      const lnglat = [113.85899, 22.571858]
-      const map = new window.AMap.Map('mapContainer', {
-        zoom: 15,
-        center: lnglat,
-      })
-      const marker = new window.AMap.Marker({
-        position: new window.AMap.LngLat(...lnglat),
-      })
-      map.add(marker)
-    },
-  )
+  const el = document.createElement('script')
+  el.src = 'https://webapi.amap.com/maps?v=2.0&key=b65ac20719e827208fb4c94bf9bc48e5'
+  document.getElementsByTagName('head')[0].appendChild(el)
+  el.onload = function () {
+    const lnglat = [113.85899, 22.571858]
+    const map = new window.AMap.Map('mapContainer', {
+      zoom: 15,
+      center: lnglat,
+    })
+    const marker = new window.AMap.Marker({
+      position: new window.AMap.LngLat(...lnglat),
+    })
+    map.add(marker)
+  }
 })
 </script>
 
