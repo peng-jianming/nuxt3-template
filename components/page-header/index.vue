@@ -75,8 +75,7 @@ const config: IMenu[] = [
   </div>
   <!-- pc端 -->
   <div
-    class="h-50 max-w-672 items-center justify-between absolute w-full top-0 z-50 left-1/2 -translate-x-[50%] hidden desktop:flex"
-  >
+    class="h-50 max-w-672 items-center justify-between absolute w-full top-0 z-50 left-1/2 -translate-x-[50%] hidden desktop:flex">
     <h1>
       <a href="/" class="title-bg-logo block w-88 h-47 text-8 -indent-[9999px]">小彼恩</a>
     </h1>

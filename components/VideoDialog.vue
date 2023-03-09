@@ -30,7 +30,7 @@ const innerIsShow = computed({
         <video-player :src="props.src!" autoplay>
           <template #video-play-btn>
             <img
-              class="absolute w-80 desktop:w-50 right-40 bottom-30 cursor-pointer"
+              class="absolute w-80 desktop:w-50 right-40 bottom-30 pointer-events-none"
               src="/img/parenting/mobile/video-stop.png"
             >
           </template>

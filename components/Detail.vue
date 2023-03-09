@@ -23,7 +23,7 @@ defineProps<IProps>()
           {{ time }}
         </div>
         <div class="content-container" v-html="content" />
-        <!-- 倒数第二个为列表,必有~ -->
+        <!-- 倒数第二个为列表,必有 -->
         <div
           class=" text-primary text-[20px] cursor-pointer mt-[30px]"
           @click="navigateTo(breadcrumbConfig[breadcrumbConfig.length - 2].link)"

@@ -1,6 +1,6 @@
 import { defineNuxtRouteMiddleware } from '#app'
 
 export default defineNuxtRouteMiddleware(() => {
-  const device = useDeviceStore()
-  device.setDevice()
+  const deviceStore = useDeviceStore()
+  deviceStore.setDevice()
 })

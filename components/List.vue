@@ -38,25 +38,20 @@ const onload = () => {
     <client-only>
       <div v-if="list.length" class="relative z-20">
         <van-list v-model:loading="loading" :finished="finished" @load="onload">
-          <div
-            v-for="item in list" :key="item.id"
+          <div v-for="item in list" :key="item.id"
             class="px-40 mb-40 desktop:w-full desktop:px-0 desktop:flex desktop:mb-25 cursor-pointer"
-            @click="navigateTo(`${route.fullPath}/detail/${item.id}`)"
-          >
+            @click="navigateTo(`${route.fullPath}/detail/${item.id}`)">
             <img
               class="w-672 h-384 rounded-25 mb-35 desktop:mb-0 desktop:w-270 desktop:h-152 desktop:mr-25 desktop:rounded-14"
-              :src="item.cover" style="object-fit: cover;"
-            >
+              :src="item.cover" style="object-fit: cover;">
             <div class="desktop:flex-1 desktop:pt-7">
               <div
-                class="text-[#0000FF] text-36 font-OPPOSans-B custom-under-line line-clamp-1 desktop:text-13 desktop:mb-20"
-              >
+                class="text-[#0000FF] text-36 font-OPPOSans-B custom-under-line line-clamp-1 desktop:text-13 desktop:mb-20">
                 {{ item.title
                 }}
               </div>
               <div
-                class="text-22 my-20 text-[#666] line-clamp-2 desktop:text-8 desktop:mt-0  desktop:mb-25 desktop:indent-12 desktop:line-clamp-5"
-              >
+                class="text-22 my-20 text-[#666] line-clamp-2 desktop:text-8 desktop:mt-0  desktop:mb-25 desktop:indent-12 desktop:line-clamp-5">
                 {{ item.brand_desc }}
               </div>
               <div class="text-19 text-info desktop:text-7">
@@ -65,18 +60,12 @@ const onload = () => {
             </div>
           </div>
           <template #loading>
-            <van-divider
-              class="text-22 px-80 mt-0"
-              style="--van-divider-border-color: #9c9c9c"
-            >
+            <van-divider class="text-22 px-80 mt-0" style="--van-divider-border-color: #9c9c9c">
               向下滑动加载更多
             </van-divider>
           </template>
           <template #finished>
-            <van-divider
-              class="text-22 px-80 mt-0"
-              style="--van-divider-border-color: #9c9c9c"
-            >
+            <van-divider class="text-22 px-80 mt-0" style="--van-divider-border-color: #9c9c9c">
               没有更多了
             </van-divider>
           </template>

@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import type { CSSProperties } from 'vue'
-import { computed, onMounted } from 'vue'
-import videojs from 'video.js'
-import type { VideoJsPlayerOptions } from 'video.js'
+import videojs, { type VideoJsPlayerOptions } from 'video.js'
 import 'video.js/dist/video-js.min.css'
 interface IProps {
   src: string
@@ -11,7 +9,7 @@ interface IProps {
   height?: string
   autoplay?: boolean
 }
-const props = withDefaults(defineProps<IProps>(), {})
+const props = defineProps<IProps>()
 // video标签
 const videoRef = ref<HTMLElement | null>(null)
 // video实例对象
@@ -26,22 +24,10 @@ const videoWrapStyles = computed<CSSProperties>(() => {
   }
 })
 
-const handlePlayOrPause = () => {
-  if (!videoPlayer)
-    return
-  videoPlayer.paused() ? videoPlayer.play() : videoPlayer.pause()
-}
-
 const handlePlay = () => {
   if (!videoPlayer)
     return
   videoPlayer.play()
-}
-
-const handlePause = () => {
-  if (!videoPlayer)
-    return
-  videoPlayer.pause()
 }
 
 const initVideo = () => {
@@ -74,22 +60,15 @@ onMounted(() => {
   initVideo()
 })
 
-defineExpose({
-  handlePause,
-  handlePlay,
-  handlePlayOrPause,
-})
 </script>
 
 <template>
   <div :style="videoWrapStyles">
-    <video
-      id="my-player" ref="videoRef" playsinline webkit-playsinline fullscreen class="video-js"
-      style="width: 100%;height: 100%;"
-    >
+    <video id="my-player" ref="videoRef" playsinline webkit-playsinline fullscreen class="video-js"
+      style="width: 100%;height: 100%;">
       <source :src="src">
     </video>
-    <slot v-if="!isPlayed" name="video-play-btn" @click="handlePlay" />
+    <slot v-if="!isPlayed" name="video-play-btn" />
   </div>
 </template>
 
