@@ -70,7 +70,9 @@ const config: IMenu[] = [
 <template>
   <!-- 移动端 -->
   <div class="fixed z-50 left-0 top-0 h-150 w-full bg-bgc px-40 desktop:hidden">
-    <img class="mx-auto mt-70 w-258 h-69" src="/img/header/mobile-logo.png" alt="小彼恩">
+    <nuxt-link to="/">
+      <img class="mx-auto mt-70 w-258 h-69" src="/img/header/mobile-logo.png" alt="小彼恩">
+    </nuxt-link>
     <page-header-mobile-menu :config="config" />
   </div>
   <!-- pc端 -->

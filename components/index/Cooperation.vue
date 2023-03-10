@@ -34,12 +34,12 @@ const list = [
 </script>
 
 <template>
-  <div class=" mt-60 relative -mb-70 desktop:-mb-10 flex flex-col items-center">
+  <div class="mt-70 relative -mb-70 desktop:-mb-10 flex flex-col items-center">
     <div class="mobile-under-bg-yellow-five text-42 desktop:text-20 desktop:mb-15 text-[#0000ff] px-10 font-OPPOSans-H">
       合作出版社
     </div>
     <!-- 移动端 -->
-    <div class="desktop:hidden w-600 flex flex-wrap mt-30 mb-60">
+    <div class="desktop:hidden w-600 flex flex-wrap mt-45 mb-60">
       <img v-for="(item, index) in list" :key="index" :src="item"
         class="cooperation-logo w-125 h-125 rounded-10 shadow-input mb-32 ml-32">
     </div>

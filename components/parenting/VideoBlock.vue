@@ -34,7 +34,7 @@ const handleOpenDialog = (bg: string, src?: string) => {
 
 <template>
   <div class="-mb-100 desktop:-mb-50">
-    <div v-for="(item, index) in pageConfig" :key="index" class="flex flex-col items-center mt-40 desktop:mt-60">
+    <div v-for="(item, index) in pageConfig" :key="index" class="flex flex-col items-center mt-70 desktop:mt-60">
       <div
         class="text-41 desktop:text-19  text-[#0000ff] pr-15 desktop:pr-10  bg-contain bg-no-repeat bg-bottom font-OPPOSans-H"
         :style="{ backgroundImage: `url(${item.titleBg})` }"
@@ -43,7 +43,7 @@ const handleOpenDialog = (bg: string, src?: string) => {
           item.title }}
       </div>
       <div
-        class="text-22 desktop:text-10 text-[#666] text-center mt-20 desktop:mt-15 leading-39 desktop:leading-14"
+        class="text-22 desktop:text-10 text-[#666] text-center mt-30 desktop:mt-15 leading-39 desktop:leading-14"
         v-html="item.desc"
       />
       <!-- 移动端 -->
@@ -54,7 +54,7 @@ const handleOpenDialog = (bg: string, src?: string) => {
             <img class="w-full h-full" src="https://oss.baobaobooks.net/college/cover/202105/162148069121745.jpg" alt="">
           </div>
         </div>
-        <div class="px-60 pt-15  text-25  text-primary text-center" @click="navigateTo('/parenting/abc-list')">
+        <div class="px-60 pt-15  text-31 leading-50 mt-15  text-primary text-center" @click="navigateTo('/parenting/abc-list')">
           查看更多 >>
         </div>
       </div>

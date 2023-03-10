@@ -28,9 +28,9 @@ const product = [
 </script>
 
 <template>
-  <div class=" mt-60 relative desktop:mt-85 flex flex-col items-center">
+  <div class="mt-80 relative desktop:mt-85 flex flex-col items-center">
     <div
-      class=" mobile-under-bg-green-four text-42 desktop:text-20 desktop:mb-15 desktop:px-10  text-[#0000ff] px-20 font-OPPOSans-H"
+      class="mobile-under-bg-green-four text-42 desktop:text-20 desktop:mb-15 desktop:px-10  text-[#0000ff] px-20 font-OPPOSans-H"
     >
       产品系列
     </div>
@@ -38,7 +38,7 @@ const product = [
     <div class="desktop:hidden ">
       <img class="absolute w-172 h-566 -left-55 -top-140" src="/img/index/mobile/bug-bg.png" alt="">
       <div class="relative z-10 desktop:hidden">
-        <div v-for="(item, index) in product" :key="index" class="rounded-25 shadow-input overflow-hidden mt-35">
+        <div v-for="(item, index) in product" :key="index" class="rounded-25 shadow-input overflow-hidden mt-40">
           <img class="w-672 h-327" :src="item.img" alt="">
           <div class="text-right h-57 text-28 leading-57 text-bgc bg-primary px-24">
             {{ item.text }} >>

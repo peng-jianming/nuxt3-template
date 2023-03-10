@@ -5,7 +5,7 @@
     >
       小彼恩品质育儿研究所
     </div>
-    <div class="text-22 desktop:text-10 text-[#666] text-center mt-20 desktop:mt-15 leading-39 desktop:leading-18">
+    <div class="text-22 desktop:text-10 text-[#666] text-center mt-30 desktop:mt-15 leading-39 desktop:leading-18">
       每一个孩子的童年都是宝贵的。<br>
       小彼恩以<span class="text-primary">品质育儿生活、品质育儿阅读、品质育儿陪伴</span>出发，<br class="desktop:hidden">
       潜心打造品质育儿研究所，<br>

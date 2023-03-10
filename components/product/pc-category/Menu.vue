@@ -1,5 +1,4 @@
 <script lang='ts' setup>
-import { ref } from 'vue'
 const activeAll = ref(['all'])
 const activeName = ref('')
 const activeThrid = ref('')
@@ -141,7 +140,6 @@ const config = [
 
         .van-icon-arrow {
             @apply font-black text-6;
-
         }
     }
 

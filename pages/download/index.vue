@@ -45,7 +45,7 @@ useHead({
           </div>
           <template #reference>
             <div
-              class="android-bg w-135 h-56 text-primary text-24 text-center leading-56 font-OPPOSans-M"
+              class="android-bg w-135 h-56 text-primary text-24 pl-18 leading-58 font-OPPOSans-M"
               :class="[{ 'ios-bg text-bgc': showMobileIosPopover }]"
             >
               IOS下载
@@ -58,7 +58,7 @@ useHead({
           </div>
           <template #reference>
             <div
-              class="android-bg mt-12 w-135 h-56 text-primary text-24 text-center leading-56 font-OPPOSans-M"
+              class="android-bg mt-12 w-135 h-56 text-primary text-24 pl-18 leading-58 font-OPPOSans-M"
               :class="[{ 'ios-bg text-bgc': showMobileAndroidPopover }]"
             >
               安卓下载
@@ -89,7 +89,7 @@ useHead({
             </div>
             <template #reference>
               <div
-                class="android-bg pl-9 cursor-pointer text-primary w-58 h-24 leading-24 font-OPPOSans-M"
+                class="android-bg pl-10 cursor-pointer text-primary w-58 h-24 leading-25 font-OPPOSans-M"
                 :class="[{ 'ios-bg text-bgc': showIosPopover }]" @mouseenter="showIosPopover = true"
                 @mouseout="showIosPopover = false"
               >
@@ -103,7 +103,7 @@ useHead({
             </div>
             <template #reference>
               <div
-                class="android-bg pl-9 cursor-pointer text-primary w-58 h-24 leading-24 ml-9 font-OPPOSans-M" :class="[{ 'ios-bg': showAndroidPopover }]"
+                class="android-bg pl-10 cursor-pointer text-primary w-58 h-24 leading-25 ml-9 font-OPPOSans-M" :class="[{ 'ios-bg': showAndroidPopover }]"
                 @mouseenter="showAndroidPopover = true" @mouseout="showAndroidPopover = false"
               >
                 安卓下载

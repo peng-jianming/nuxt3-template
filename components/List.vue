@@ -51,7 +51,7 @@ const onload = () => {
                 }}
               </div>
               <div
-                class="text-22 my-20 text-[#666] line-clamp-2 desktop:text-8 desktop:mt-0  desktop:mb-25 desktop:indent-12 desktop:line-clamp-5">
+                class="text-24 leading-35 desktop:leading-15 my-20 text-[#666] line-clamp-2 desktop:text-8 desktop:mt-0  desktop:mb-25 desktop:indent-12 desktop:line-clamp-5">
                 {{ item.brand_desc }}
               </div>
               <div class="text-19 text-info desktop:text-7">

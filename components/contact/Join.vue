@@ -1,7 +1,8 @@
 <template>
   <div class="w-540 mt-50 desktop:mt-0 desktop:w-480 ml-60 desktop:mx-auto relative -mb-70 desktop:mb-0">
     <div class="text-center">
-      <span class="under-bg-yellow-four text-33 desktop:text-20 text-[#001CF2] px-7 py-3 ml-70 desktop:ml-0 font-OPPOSans-H">
+      <span
+        class="under-bg-yellow-four text-33 desktop:text-20 text-[#001CF2] px-7 py-3 ml-70 desktop:ml-0 font-OPPOSans-H">
         加入我们
       </span>
     </div>
@@ -14,7 +15,8 @@
           </div>
           <div class="text-14 desktop:text-8 whitespace-nowrap">
             <div>wang.xinghai@hbtown.com</div>
-            <div>更多招聘信息，<a href="" class=" text-primary">点击了解 >></a></div>
+            <div>更多招聘信息，<a href="https://www.zhipin.com/gongsi/20cb144bf07023071HB73NW1.html" target="_blank"
+                class=" text-primary">点击了解 >></a></div>
           </div>
         </div>
       </div>

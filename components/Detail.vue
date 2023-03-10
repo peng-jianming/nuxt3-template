@@ -42,5 +42,6 @@ defineProps<IProps>()
     color: #7c8a95;
     position: relative;
     z-index: 10;
+    word-break: break-all;
 }
 </style>
