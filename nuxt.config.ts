@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt'],
+  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', 'nuxt-simple-sitemap'],
   app: {
     head: {
       title: '亲子阅读-点读笔-毛毛虫点读笔-绘本-【小彼恩】',
@@ -21,4 +21,17 @@ export default defineNuxtConfig({
       ],
     },
   },
+  sitemap: {
+    hostname: 'https://test.com',
+    urls: [
+      { url: '/parenting/aaa-list', changefreq: 'monthly', priority: 0.3 },
+      { url: '/parenting/ccc-list', changefreq: 'monthly', priority: 0.3 },
+      { url: '/parenting/bbb-list', changefreq: 'monthly', priority: 0.3 },
+      { url: '/parenting/bbb-list', changefreq: 'monthly', priority: 0.3 },
+    ]
+  },
+  routeRules: {
+    // modify the sitemap.xml entry for specific URLs
+    '**': { sitemap: { changefreq: 'monthly', priority: 0.3 } }
+  }
 })
