@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 import { getParentsGuideList } from '~/assets/api/parents-guide'
+import { getVideoList, IVideoItem } from '~/assets/api/parenting';
+import { parentingEnums, pageConfig } from '~/components/parenting/config'
 definePageMeta({
   footerColor: 'red',
 })
@@ -11,26 +13,39 @@ const breadcrumbConfig = ref<IBreadcrumbItem[]>([
     link: '/parenting',
   },
   {
-    title: '家长指南'
+    title: pageConfig[route.params.name as keyof typeof parentingEnums].title
   },
 ])
-interface IlistItem {
-  id: number
-  title: string
-  online_at: string
-  cover: string
-  brand_desc: string
-}
-const options = ref({
-  title: '',
-  show_place: 2,
-})
+// interface IlistItem {
+//   id: number
+//   title: string
+//   online_at: string
+//   cover: string
+//   brand_desc: string
+// }
+// const options = ref({
+//   title: '',
+//   show_place: 2,
+// })
+// const { loadData, list, finished, loading, curPage } = useList<IlistItem>(getParentsGuideList, options)
 
-const { loadData, list, finished, loading, curPage } = useList<IlistItem>(getParentsGuideList, options)
+const options = ref({
+  video_position: parentingEnums[route.params.name as any],
+  title: ''
+})
+const { loadData, list, finished, loading, curPage } = useList<IVideoItem>(getVideoList, options)
 
 const onload = () => {
   curPage.value += 1
   loadData()
+}
+
+const isShow = ref(false)
+const currentVideoSrc = ref('')
+const currentVideoDialogBg = ref(pageConfig[route.params.name as keyof typeof parentingEnums].videoDialogBg)
+const handleOpenDialog = (src: string) => {
+  currentVideoSrc.value = src
+  isShow.value = true
 }
 </script>
 
@@ -45,18 +60,17 @@ const onload = () => {
     </div>
     <!-- 移动列表 -->
     <van-list v-model:loading="loading" class="desktop:hidden" :finished="finished" @load="onload">
-      <div v-for="(item, index) in list" :key="index" class="px-40 mb-40"
-        @click="navigateTo(`${route.fullPath}/detail/${item.id}`)">
-        <img class=" w-672 h-384 rounded-25 mb-35" :src="item.cover" alt="">
+      <div v-for="(item, index) in list" :key="index" class="px-40 mb-40" @click="handleOpenDialog(item.resource_url)">
+        <img class=" w-672 h-384 rounded-25 mb-35" :src="item.resource_cover" alt="">
         <div class="text-[#0000FF] text-36 font-OPPOSans-B custom-under-line line-clamp-1">
           {{ item.title }}
         </div>
         <div class="text-22 my-20 text-[#666] line-clamp-2">
-          {{ item.brand_desc }}
+          {{ item.title }}
         </div>
-        <div class="text-19 text-info">
-          {{ item.online_at }}
-        </div>
+        <!-- <div class="text-19 text-info">
+                  {{ item.online_at }}
+                </div> -->
       </div>
       <template #loading>
         <van-divider class="text-22 px-80 mt-0" style="--van-divider-border-color: #9c9c9c">
@@ -74,13 +88,14 @@ const onload = () => {
       <div class="flex flex-wrap justify-between">
         <div v-for="(item, index) in list" :key="index"
           class="w-182 h-139 rounded-16 cursor-pointer overflow-hidden shadow-input mb-45"
-          @click="navigateTo(`${route.fullPath}/detail/${item.id}`)">
-          <img class="w-182 h-102 " :src="item.cover" alt="">
+          @click="handleOpenDialog(item.resource_url)">
+          <img class="w-182 h-102 " :src="item.resource_cover" alt="">
           <div class="h-37 text-8 text-[#666] bg-white overflow-hidden px-16 py-6 line-clamp-2">
             {{ item.title }}
           </div>
         </div>
       </div>
     </div>
+    <video-dialog v-model:is-show="isShow" :src="currentVideoSrc" :bg-img="currentVideoDialogBg" />
   </div>
 </template>

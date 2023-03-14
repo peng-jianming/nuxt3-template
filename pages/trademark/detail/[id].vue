@@ -10,10 +10,10 @@ const data = await getParentsGuideDetail(Number(route.params.id), {
 })
 
 useHead({
-  title: `${data.title}_小彼恩littlebean`,
+  title: data.seo_title,
   meta: [
-    { name: 'description', content: data.brand_desc },
-    { name: 'keywords', content: '毛毛虫点读笔、英语点读笔、儿童点读笔、幼儿点读笔、小彼恩littlebean' },
+    { name: 'description', content: data.seo_description },
+    { name: 'keywords', content: data.seo_keywords },
   ],
 })
 

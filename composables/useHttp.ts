@@ -1,5 +1,6 @@
 import type { UseFetchOptions } from '#app'
-const baseURL = 'https://www.xiaobien.com/xiaobien-api/'
+// const baseURL = 'https://www.xiaobien.com/xiaobien-api/'
+const baseURL = 'http://dev-www.xiaobien.net/xiaobien-api/'
 
 interface responseData<T> {
   code: string

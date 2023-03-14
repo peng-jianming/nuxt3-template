@@ -8,10 +8,10 @@ const route = useRoute()
 const data = await getHelpsDetail(Number(route.params.id))
 
 useHead({
-  title: `${data.title}-小彼恩售后_小彼恩littlebea`,
+  title: data.title,
   meta: [
-    { name: 'description', content: data.content },
-    { name: 'keywords', content: '好饿的毛毛虫点读笔、英语点读笔、中文点读笔、儿童点读笔、小彼恩littlebean、小彼恩售后' },
+    { name: 'description', content: data.seo_description },
+    { name: 'keywords', content: data.seo_keywords },
   ],
 })
 
