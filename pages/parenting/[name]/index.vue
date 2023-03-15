@@ -1,36 +1,26 @@
 <script lang="ts" setup>
-import { getParentsGuideList } from '~/assets/api/parents-guide'
 import { getVideoList, IVideoItem } from '~/assets/api/parenting';
-import { parentingEnums, pageConfig } from '~/components/parenting/config'
+import { pageConfig } from '~/components/parenting/config'
 definePageMeta({
   footerColor: 'red',
 })
 
 const route = useRoute()
+const currentPageConfig = pageConfig[route.params.name as keyof typeof pageConfig]
+
+
 const breadcrumbConfig = ref<IBreadcrumbItem[]>([
   {
     title: '品质育儿研究所',
     link: '/parenting',
   },
   {
-    title: pageConfig[route.params.name as keyof typeof parentingEnums].title
+    title: currentPageConfig.title
   },
 ])
-// interface IlistItem {
-//   id: number
-//   title: string
-//   online_at: string
-//   cover: string
-//   brand_desc: string
-// }
-// const options = ref({
-//   title: '',
-//   show_place: 2,
-// })
-// const { loadData, list, finished, loading, curPage } = useList<IlistItem>(getParentsGuideList, options)
 
 const options = ref({
-  video_position: parentingEnums[route.params.name as any],
+  video_position: currentPageConfig.video_position,
   title: ''
 })
 const { loadData, list, finished, loading, curPage } = useList<IVideoItem>(getVideoList, options)
@@ -42,7 +32,7 @@ const onload = () => {
 
 const isShow = ref(false)
 const currentVideoSrc = ref('')
-const currentVideoDialogBg = ref(pageConfig[route.params.name as keyof typeof parentingEnums].videoDialogBg)
+const currentVideoDialogBg = ref(currentPageConfig.videoDialogBg)
 const handleOpenDialog = (src: string) => {
   currentVideoSrc.value = src
   isShow.value = true
@@ -58,44 +48,69 @@ const handleOpenDialog = (src: string) => {
       <breadcrumb class="" :config="breadcrumbConfig" />
       <search v-model="options.title" class="hidden desktop:block" @search="loadData(true)" />
     </div>
-    <!-- 移动列表 -->
-    <van-list v-model:loading="loading" class="desktop:hidden" :finished="finished" @load="onload">
-      <div v-for="(item, index) in list" :key="index" class="px-40 mb-40" @click="handleOpenDialog(item.resource_url)">
-        <img class=" w-672 h-384 rounded-25 mb-35" :src="item.resource_cover" alt="">
-        <div class="text-[#0000FF] text-36 font-OPPOSans-B custom-under-line line-clamp-1">
-          {{ item.title }}
-        </div>
-        <div class="text-22 my-20 text-[#666] line-clamp-2">
-          {{ item.title }}
-        </div>
-        <!-- <div class="text-19 text-info">
-                  {{ item.online_at }}
-                </div> -->
-      </div>
-      <template #loading>
-        <van-divider class="text-22 px-80 mt-0" style="--van-divider-border-color: #9c9c9c">
-          向下滑动加载更多
-        </van-divider>
-      </template>
-      <template #finished>
-        <van-divider class="text-22 px-80 mt-0" style="--van-divider-border-color: #9c9c9c">
-          没有更多了
-        </van-divider>
-      </template>
-    </van-list>
-    <!-- pc列表 -->
-    <div class="hidden desktop:block relative z-10">
-      <div class="flex flex-wrap justify-between">
-        <div v-for="(item, index) in list" :key="index"
-          class="w-182 h-139 rounded-16 cursor-pointer overflow-hidden shadow-input mb-45"
-          @click="handleOpenDialog(item.resource_url)">
-          <img class="w-182 h-102 " :src="item.resource_cover" alt="">
-          <div class="h-37 text-8 text-[#666] bg-white overflow-hidden px-16 py-6 line-clamp-2">
-            {{ item.title }}
+    <client-only>
+      <!-- 移动端 -->
+      <div class="desktop:hidden">
+        <van-list v-model:loading="loading" :finished="finished" @load="onload">
+          <div v-for="(item, index) in list" :key="index" class="px-40 mb-40"
+            @click="handleOpenDialog(item.resource_url)">
+            <img class=" w-672 h-384 rounded-25 mb-35" :src="item.resource_cover" alt="">
+            <div class="text-[#0000FF] text-36 font-OPPOSans-B custom-under-line line-clamp-1">
+              {{ item.title }}
+            </div>
+            <div class="text-22 my-20 text-[#666] line-clamp-2">
+              {{ item.resource_desc }}
+            </div>
+            <div class="text-19 text-info">
+              {{ item.online_time }}
+            </div>
           </div>
-        </div>
+          <template #loading>
+            <van-divider class="text-22 px-80 mt-0" style="--van-divider-border-color: #9c9c9c">
+              向下滑动加载更多
+            </van-divider>
+          </template>
+          <template #finished>
+            <van-divider class="text-22 px-80 mt-0" style="--van-divider-border-color: #9c9c9c">
+              没有更多了
+            </van-divider>
+          </template>
+        </van-list>
       </div>
-    </div>
+      <!-- pc端 -->
+      <div class="hidden desktop:block relative z-10">
+        <van-list v-model:loading="loading" :finished="finished" @load="onload">
+          <div class="flex flex-wrap">
+            <div v-for="(item, index) in list" :key="index"
+              class="list-items  w-182 h-139 rounded-16 cursor-pointer overflow-hidden shadow-input mb-45 mr-18"
+              @click="handleOpenDialog(item.resource_url)">
+              <img class="w-182 h-102" :src="item.resource_cover" alt="">
+              <div class="h-37 text-8 text-[#666] bg-white overflow-hidden px-16 py-6 line-clamp-2">
+                {{ item.resource_desc }}
+              </div>
+            </div>
+          </div>
+          <template #loading>
+            <van-divider class="text-22 px-80 mt-0" style="--van-divider-border-color: #9c9c9c">
+              向下滑动加载更多
+            </van-divider>
+          </template>
+          <template #finished>
+            <van-divider class="text-22 px-80 mt-0" style="--van-divider-border-color: #9c9c9c">
+              没有更多了
+            </van-divider>
+          </template>
+        </van-list>
+      </div>
+    </client-only>
     <video-dialog v-model:is-show="isShow" :src="currentVideoSrc" :bg-img="currentVideoDialogBg" />
   </div>
 </template>
+
+<style lang="scss" scoped>
+.list-items {
+  &:nth-child(3n) {
+    @apply mr-0;
+  }
+}
+</style>

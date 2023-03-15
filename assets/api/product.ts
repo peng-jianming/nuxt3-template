@@ -1,38 +1,47 @@
-export interface IGetParentsGuideListResponse {
-    list: {
-        id: number
-        title: string
-        online_at: string
-        cover: string
-        brand_desc: string
-    }[]
-    total: number
+export enum CategoryEnums {
+    PRODUCT = 'product',
+    DIANDUBAO = 'diandubao'
 }
-
-export interface IGetParentsGuideListRequest {
-    page?: number
-    per_page?: number
-    title: string
-    show_place: number
+export interface IGetCategoryResponse {
+    type: CategoryEnums,
+    id: number,
+    title: string,
+    child: IGetCategoryResponse[]
 }
 
 export const getCategory = () => {
-    return useHttp({
+    return useHttp<IGetCategoryResponse>({
         url: '/diandubi/v1/web/category',
         method: 'get'
     })
 }
 
-export const getProductList = () => {
+export interface IGetProductListRequest {
+    type: number,
+    keywords: string,
+    page?: number,
+    per_page?: number
+}
+
+export const getProductList = (params: IGetProductListRequest) => {
     return useHttp({
         url: '/diandubi/v1/web/product/list',
-        method: 'get'
+        method: 'get',
+        query: params
     })
 }
 
-export const getDiandubaoList = () => {
+export interface IGetDiandubaoListRequest {
+    type: number,
+    keywords: string,
+    page?: number,
+    per_page?: number
+}
+
+export const getDiandubaoList = (params: IGetDiandubaoListRequest) => {
     return useHttp({
         url: '/diandubi/v1/web/diandubao/list',
-        method: 'get'
+        method: 'get',
+        query: params
     })
 }

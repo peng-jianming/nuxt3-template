@@ -3,7 +3,9 @@ export interface IVideoItem {
     title: string,
     resource_cover: string,
     resource_url: string,
-    video_position: number
+    video_position: number,
+    online_time: string,
+    resource_desc: string
 }
 export interface IGetVideoPreviewResponse {
     happy_list: IVideoItem[],

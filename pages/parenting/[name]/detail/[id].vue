@@ -6,16 +6,16 @@ definePageMeta({
 const route = useRoute()
 
 const data = await getParentsGuideDetail(Number(route.params.id), {
-  show_place: 2,
+  show_place: 3,
 })
 const content = ref(data.brand_desc)
 const online_time = ref(data.online_at)
 const title = ref(data.title)
 useHead({
-  title: `${data.title}_小彼恩littlebean`,
+  title: data.seo_title,
   meta: [
-    { name: 'description', content: data.brand_desc },
-    { name: 'keywords', content: '英语启蒙绘本、国学启蒙绘本、英文绘本怎么选、国学启蒙绘本怎么选、小彼恩littlebean' },
+    { name: 'description', content: data.seo_description },
+    { name: 'keywords', content: data.seo_keywords },
   ],
 })
 const breadcrumbConfig = ref<IBreadcrumbItem[]>([
@@ -24,8 +24,8 @@ const breadcrumbConfig = ref<IBreadcrumbItem[]>([
     link: '/parenting',
   },
   {
-    title: parentingEnums[route.params.name as keyof typeof parentingEnums],
-    link: `/parenting/${route.params.name}-list`,
+    title: '“育”见成长',
+    link: `/parenting/grow_list`,
   },
   {
     title: data.title,

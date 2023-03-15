@@ -16,7 +16,7 @@ export default function useList<ItemType extends object>(
   const pageSize = ref(4)
   // 数据
   const list = ref<ItemType[]>([])
-
+  
   const loadData = async (reload = false) => {
     //  重置搜索,页数变为1
     if (reload)

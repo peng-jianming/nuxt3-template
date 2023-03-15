@@ -1,14 +1,9 @@
 import { IVideoItem } from '~~/assets/api/parenting';
 
-export enum parentingEnums {
-    'happy_list' = 1,
-    'expert_list',
-    'method_list',
-}
 interface IPageConfigItem {
-    video_position: parentingEnums,
+    video_position: number,
     list: IVideoItem[],
-    prop: keyof typeof parentingEnums,
+    prop: string,
     [propName: string]: any;
 }
 interface IPageConfig {
@@ -16,6 +11,7 @@ interface IPageConfig {
     expert_list: IPageConfigItem,
     method_list: IPageConfigItem,
 }
+
 export const pageConfig: IPageConfig = {
     happy_list: {
         prop: 'happy_list',
@@ -46,5 +42,5 @@ export const pageConfig: IPageConfig = {
         videoDialogBg: '/img/parenting/video-play-yellow.png',
         desc: '在养育孩子的过程中，家长总会面临各种各样的挑战与困惑。<br/>如何化解育儿道路上的重重困难，实现科学养育呢？<br/>育儿先育己，小彼恩推出“育”儿有方系列内容，<br class="desktop:hidden"/>陪你和孩子一起成长， 让品质育儿更轻松。',
         list: []
-    },
+    }
 }

@@ -1,4 +1,17 @@
 <script lang='ts' setup>
+import { getParentsGuideList } from '~/assets/api/parents-guide'
+interface IlistItem {
+  id: number
+  title: string
+  online_at: string
+  cover: string
+  brand_desc: string
+}
+const options = ref({
+  per_page: 3,
+  show_place: 3,
+})
+const { list } = useList<IlistItem>(getParentsGuideList, options)
 const containerRef = ref<HTMLElement | null>(null)
 onMounted(() => {
   containerRef.value!.scrollLeft = 425 * document.body.clientWidth / 750
@@ -20,32 +33,31 @@ onMounted(() => {
     <!-- 移动端 -->
     <div class="desktop:hidden">
       <div ref="containerRef" class="w-750 mt-35 overflow-auto flex pb-25 hidden-scrollbar">
-        <div v-for="item in 5" :key="item"
+        <div v-for="item in list" :key="item.id"
           class=" flex-shrink-0 rounded-25 mx-15 shadow-input w-503 h-384 overflow-hidden"
-          @click="navigateTo('/parenting/yjcz-list/detail/1')">
-          <img class="w-503 h-280" src="https://oss.baobaobooks.net/college/cover/202105/162148069121745.jpg" alt="">
+          @click="navigateTo(`/parenting/grow_list/detail/${item.id}`)">
+          <img class="w-503 h-280" :src="item.cover" alt="">
           <div class="h-104 px-40 pt-20 text-23 text-[#666] bg-white ">
-            孩子成长的最好方式，我在亲子共读中找到了答案
+            {{ item.brand_desc }}
           </div>
         </div>
       </div>
-      <div class=" text-primary text-31 text-center leading-50" @click="navigateTo('/parenting/yjcz-list')">
+      <div class=" text-primary text-31 text-center leading-50" @click="navigateTo('/parenting/grow_list')">
         查看更多 >>
       </div>
     </div>
     <!-- PC端 -->
     <div class="hidden desktop:flex w-594 mt-15 z-10 relative m-auto justify-between">
-      <div v-for="(item, index) in 3" :key="index"
+      <div v-for="(item, index) in list" :key="index"
         class="w-182 h-139 rounded-16 overflow-hidden shadow-input cursor-pointer"
-        @click="navigateTo('/parenting/yjcz-list/detail/1')">
-        <img class="w-182 h-102" src="https://oss.baobaobooks.net/college/cover/202105/162148069121745.jpg"
-          style="object-fit: cover;" alt="">
+        @click="navigateTo(`/parenting/grow_list/detail/${item.id}`)">
+        <img class="w-182 h-102" :src="item.cover" style="object-fit: cover;" alt="">
         <div class="h-37 pt-7 px-16 text-8 text-[#666] bg-white">
-          孩子成长的最好方式，我在亲子共读中找到了答案
+          {{ item.brand_desc }}
         </div>
       </div>
       <img class="w-41 h-27 absolute top-1/2 -translate-y-1/2 -right-55 cursor-pointer"
-        src="/img/parenting/arrow-right.png" @click="navigateTo('/parenting/yjcz-list')">
+        src="/img/parenting/arrow-right.png" @click="navigateTo('/parenting/grow_list')">
     </div>
     <img class="w-167 h-103 desktop:w-191 desktop:h-89 absolute -left-44 -top-60 desktop:left-0  desktop:top-90"
       src="/img/parenting/mobile/point-bg.png">

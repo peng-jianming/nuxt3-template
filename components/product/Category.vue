@@ -1,135 +1,11 @@
 <script lang='ts' setup>
-import { computed, ref } from 'vue'
+import { IGetCategoryResponse } from '~/assets/api/product'
+interface IProps {
+  menuConfig: IGetCategoryResponse[]
+}
+defineProps<IProps>()
 const router = useRouter()
-const config = [
-  {
-    prop: '1',
-    label: '智能硬件',
-    category: [
-      {
-        label: '儿童歌谣',
-      },
-      {
-        label: '国学启蒙',
-      },
-      {
-        label: '故事绘本',
-      },
-      {
-        label: '益智游戏',
-      },
-      {
-        label: '科普百科',
-      },
-      {
-        label: '科普百科',
-      },
-    ],
-  },
-  {
-    prop: '2',
-    label: '中文童书',
-    category: [
-      {
-        label: '儿童歌谣1',
-      },
-      {
-        label: '国学启蒙',
-      },
-      {
-        label: '故事绘本',
-      },
-      {
-        label: '益智游戏',
-      },
-      {
-        label: '科普百科',
-      },
-    ],
-  },
-  {
-    prop: '3',
-    label: '英文童书',
-    category: [
-      {
-        label: '儿童歌谣',
-      },
-      {
-        label: '国学启蒙',
-      },
-      {
-        label: '故事绘本',
-      },
-      {
-        label: '益智游戏',
-      },
-      {
-        label: '科普百科',
-      },
-    ],
-  },
-  {
-    prop: '4',
-    label: '益智教玩具',
-    category: [
-      {
-        label: '儿童歌谣',
-      },
-      {
-        label: '国学启蒙',
-      },
-      {
-        label: '故事绘本',
-      },
-      {
-        label: '益智游戏',
-      },
-      {
-        label: '科普百科',
-      },
-    ],
-  },
-]
-const activeSmallCate = ref('儿童歌谣')
-const activeName = ref('1')
-const currentSmallCate = computed(() => {
-  const result = config.find(item => item.prop === activeName.value)
-  return result ? result.category : []
-})
 
-const loadBigCate = () => {
-  setTimeout(() => {
-    [
-      {
-        id: 1,
-        label: '智能硬件',
-      },
-      {
-        id: 2,
-        label: '中文童书',
-      },
-      {
-        id: 3,
-        label: '英文童书',
-      },
-      {
-        id: 4,
-        label: '益智教玩具',
-      },
-    ]
-  }, 1000)
-}
-const loading = ref(false)
-const finished = ref(false)
-const num = ref(0)
-const onLoad = () => {
-  setTimeout(() => {
-    num.value += 4
-    loading.value = false
-    if (num.value > 30)
-      finished.value = true
-  }, 1000)
-}
 </script>
 
 <template>
@@ -138,7 +14,7 @@ const onLoad = () => {
       v-model:active="activeName" line-width="0" class="px-30" swipe-threshold="4" :ellipsis="false"
       style="--van-tabs-line-height: 0.666rem" title-inactive-color="#999"
     >
-      <van-tab v-for="{ prop, label } in config" :key="prop" :name="prop">
+      <van-tab v-for="item in menuConfig" :key="item.id" :name="item.title">
         <template #title>
           <div
             class="text-31 px-15 font-black h-50 leading-50 bg-bgc font-OPPOSans-B"
