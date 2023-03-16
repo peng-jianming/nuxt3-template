@@ -45,3 +45,17 @@ export const getDiandubaoList = (params: IGetDiandubaoListRequest) => {
         query: params
     })
 }
+
+export const getBooksDetail = (id: number) => {
+    return useHttp({
+        url: `/diandubi/v1/books/${id}`,
+        method: 'get'
+    })
+}
+
+export const getProductDetail = (id: number) => {
+    return useHttp({
+        url: `/diandubi/v1/product/detail/${id}`,
+        method: 'get'
+    })
+}

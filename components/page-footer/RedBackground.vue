@@ -21,7 +21,7 @@
 
 <style scoped>
 .footer-red-bg {
-    background: url('/img/footer/page-footer-red.png') no-repeat center top;
+    background: url('/img/footer/page-footer-red.gif') no-repeat center top;
     background-size: cover;
 }
 

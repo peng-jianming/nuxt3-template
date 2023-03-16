@@ -70,7 +70,7 @@ onMounted(() => {
         @click="navigateTo('/trademark')">
     </div>
 
-    <img class="w-196 absolute right-0 -bottom-750 desktop:-top-220" src="/img/index/brand-dynamics-bg.png">
+    <img class="w-196 absolute right-0 -bottom-750 desktop:-top-220" src="/img/index/brand-dynamics-bg.gif">
     <img class="hidden desktop:block w-200 absolute -left-50 -top-60" src="/img/index/bird-bg.gif">
   </div>
 </template>

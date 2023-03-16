@@ -42,7 +42,7 @@ const handleOpenDialog = (src: string) => {
 <template>
   <div class="-mb-120 desktop:pt-90 desktop:px-78 desktop:-mb-60 relative">
     <img class="hidden desktop:block absolute -right-60 top-0 w-299" src="/img/right-cloud-bg.gif" alt="">
-    <img class="hidden desktop:block  absolute left-0 top-283 w-191 h-89" src="/img/download/left-point.png" alt="">
+    <img class="hidden desktop:block  absolute left-0 top-283 w-191 h-89" src="/img/download/left-point.gif" alt="">
     <mobile-search v-model="options.title" class="px-30 pt-180 pb-40" placeholder="搜索动态" @search="loadData(true)" />
     <div class="desktop:flex justify-between items-center px-40 mb-40 desktop:px-0 desktop:mb-10">
       <breadcrumb class="" :config="breadcrumbConfig" />

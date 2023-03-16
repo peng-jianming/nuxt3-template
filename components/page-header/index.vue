@@ -15,22 +15,22 @@ const config: IMenu[] = [
     children: [
       {
         label: '智能硬件',
-        link: 'http://www.baidu.com',
+        link: '/product?activeSecond=智能硬件',
         isShowMobile: true,
       },
       {
         label: '中文童书',
-        link: 'http://www.baidu.com',
+        link: '/product?activeSecond=中文童书',
         isShowMobile: true,
       },
       {
         label: '英文童书',
-        link: 'http://www.baidu.com',
+        link: '/product?activeSecond=英文童书',
         isShowMobile: true,
       },
       {
         label: '益智教玩具',
-        link: 'http://www.baidu.com',
+        link: '/product?activeSecond=益智教玩具',
         isShowMobile: true,
       },
     ],

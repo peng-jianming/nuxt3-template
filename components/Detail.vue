@@ -12,7 +12,7 @@ defineProps<IProps>()
 <template>
   <div class="pt-150 desktop:pt-90 -mb-80 relative">
     <img class="hidden desktop:block absolute -right-60 top-0 w-299" src="/img/right-cloud-bg.gif" alt="">
-    <img class="hidden desktop:block  absolute left-0 top-283 w-191 h-89" src="/img/download/left-point.png" alt="">
+    <img class="hidden desktop:block  absolute left-0 top-283 w-191 h-89" src="/img/download/left-point.gif" alt="">
     <div class="px-35 desktop:px-150 min-h-300">
       <breadcrumb class="my-40 desktop:mt-0 desktop:mb-15" :config="breadcrumbConfig" />
       <div class="flex flex-col items-center">

@@ -41,7 +41,7 @@ module.exports = {
         desktop: '960px', // => @media (min-width: 960px) { ... }
       },
       backgroundImage: {
-        'contact-us': 'url(\'/img/contact/email.png\')',
+        'contact-us': 'url(\'/img/contact/email.gif\')',
         'mobile-contact-us': 'url(\'/img/contact/mobile/email.png\')',
         'download-bg': 'url(\'/img/product/download-bg.png\')',
         'download-bg-active': 'url(\'/img/product/download-red-bg.png\')',

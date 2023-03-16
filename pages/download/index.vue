@@ -71,7 +71,7 @@ useHead({
   <!-- pc端 -->
   <div class="hidden desktop:block h-410 relative overflow-hidden -mb-80">
     <img class="absolute -right-60 top-0 w-299" src="/img/right-cloud-bg.gif" alt="">
-    <img class="absolute left-0 top-283 w-191 h-89" src="/img/download/left-point.png" alt="">
+    <img class="absolute left-0 top-283 w-191 h-89" src="/img/download/left-point.gif" alt="">
     <div class="w-594 h-148 rounded-15 bg-[#F7F7F7] mt-203 mx-auto relative">
       <img class=" absolute left-71 -top-120 w-252 h-138" src="/img/download/hand.png" alt="">
       <img class=" absolute left-125 -top-131 w-163 h-336 z-10" src="/img/download/phone.png" alt="">

@@ -79,7 +79,7 @@ const pageConfig = {
     </div>
     <div class=" h-216 w-533 relative mt-49 mx-auto">
       <div class="absolute w-388 h-72">
-        <img src="/img/about/vision-bg.png" alt="" class="w-388 h-72 absolute">
+        <img src="/img/about/vision-bg.gif" alt="" class="w-388 h-72 absolute">
         <div class="text-20 text-bgc w-40 absolute left-36 top-13 z-10 leading-23 font-OPPOSans-H">
           {{ pageConfig.tag[0].title }}
         </div>
@@ -88,7 +88,7 @@ const pageConfig = {
         </div>
       </div>
       <div class="absolute w-393 h-83 top-56 right-0">
-        <img src="/img/about/mission-bg.png" alt="" class="w-393 h-83 absolute right-0 top-0">
+        <img src="/img/about/mission-bg.gif" alt="" class="w-393 h-83 absolute right-0 top-0">
         <div class="text-20 text-primary absolute -right-19 bottom-0 z-10 leading-20 font-OPPOSans-H">
           {{ pageConfig.tag[1].title }}
         </div>
@@ -97,7 +97,7 @@ const pageConfig = {
         </div>
       </div>
       <div class="absolute w-319 h-77 left-17 bottom-0">
-        <img src="/img/about/slogan-bg.png" alt="" class="w-318 h-77 absolute">
+        <img src="/img/about/slogan-bg.gif" alt="" class="w-318 h-77 absolute">
         <div class="text-20 text-primary w-40 absolute left-80 top-32 z-10 leading-23 font-OPPOSans-H">
           {{ pageConfig.tag[2].title }}
         </div>
