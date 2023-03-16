@@ -85,8 +85,7 @@ const handleChange = (level: number, name: string, type: CategoryEnums, id: numb
               }}
             </div>
           </template>
-          <van-divider :style="{ borderColor: '#999' }" />
-          <van-tabs shrink line-width="0" class="mt-10 pt-10 boder-info" :ellipsis="false"
+          <van-tabs shrink line-width="0" class="mt-10 pt-10 boder-info border-t-1" :ellipsis="false"
             style="--van-tabs-nav-background: #FFFDF7">
             <van-tab v-for="(_item, index) in item.child" :key="index" :name="_item.title">
               <template #title>
@@ -105,7 +104,7 @@ const handleChange = (level: number, name: string, type: CategoryEnums, id: numb
       </van-tabs>
       <!-- 列表 -->
       <div class="w-690 mx-auto relative mt-10 min-h-500">
-        <div v-if="listParams.list.length">
+        <div v-if="listParams.list.length || (!listParams.finished && listParams.loading)">
           <van-list v-model:loading="listParams.loading" :finished="listParams.finished" @load="listParams.onload">
             <div class="py-30 min-h-500 relative flex flex-wrap justify-between">
               <div v-for="item in listParams.list" :key="item.id" class=" shrink-0 w-330 mb-40"
@@ -119,7 +118,7 @@ const handleChange = (level: number, name: string, type: CategoryEnums, id: numb
               </div>
             </div>
             <template #loading>
-              <van-divider class="load-more" style="--van-divider-border-color: #9c9c9c">
+              <van-divider v-if="listParams.list.length " class="load-more" style="--van-divider-border-color: #9c9c9c">
                 向下滑动加载更多
               </van-divider>
             </template>

@@ -41,10 +41,10 @@ onMounted(() => {
   <div class="mt-150 mx-40 -mb-80  relative desktop:w-570 desktop:ml-78 desktop:-mb-100  desktop:mt-80">
     <img class="absolute -right-150 -top-80 w-299 hidden desktop:block" src="/img/right-cloud-bg.gif" alt="">
     <breadcrumb :config="breadcrumbConfig" />
-    <div class="desktop:flex justify-between desktop:mt-15">
+    <div class="desktop:flex justify-between mt-15">
       <div class="mb-55 desktop:mb-0 w-670 desktop:w-252 desktop:h-205 desktop:flex justify-between desktop:mr-45">
         <div class="w-670 h-670 desktop:w-205 desktop:h-205">
-          <div class="swiper mySwiper-pc w-full h-full rounded-30 desktop:rounded-16 overflow-hidden">
+          <div class="swiper mySwiper-pc w-full h-full rounded-30 desktop:rounded-16 overflow-hidden ">
             <div class="swiper-wrapper">
               <div v-for="(item, index) in data.images" :key="index" class="swiper-slide">
                 <img class="w-full h-full" :src="item">
@@ -52,10 +52,11 @@ onMounted(() => {
             </div>
           </div>
         </div>
-        <div class="mt-20 desktop:mt-0 desktop:w-36 desktop:h-205 flex desktop:flex-col ">
+        <div class="mt-20 desktop:mt-0 desktop:w-36 desktop:h-205 flex desktop:flex-col overflow-auto hidden-scrollbar">
           <div v-for="(item, index) in route.query.type === CategoryEnums.DIANDUBAO ? data.image_list : data.images"
-            :key="index" @click="swiper.slideTo(index, 1000)">
-            <img class="w-112 h-112 rounded-24 desktop:w-36 desktop:h-36 desktop:rounded-8 mb-6" :src="item">
+            :key="index" class="shrink-0" @click="swiper.slideTo(index, 1000)">
+            <img class="w-112 h-112 rounded-24 desktop:w-36 desktop:h-36 desktop:rounded-8 "
+              :class="[{ 'ml-28 mt-0 desktop:ml-0 desktop:mt-6': index }]" :src="item">
           </div>
         </div>
       </div>
@@ -74,9 +75,9 @@ onMounted(() => {
         <div v-if="route.query.type === CategoryEnums.DIANDUBAO ? data.tags.length : data.product_tags.length"
           class="text-22 desktop:text-6 flex mb-15 desktop:mb-6 order-1 desktop:order-4 ">
           <!-- <div
-                          class="tag-bg-diandu h-39 min-w-110 mr-17 leading-39  desktop:h-11 desktop:leading-11 desktop:min-w-32 text-center desktop:mr-5 font-OPPOSans-B text-bgc">
-                          点读版
-                        </div> -->
+                              class="tag-bg-diandu h-39 min-w-110 mr-17 leading-39  desktop:h-11 desktop:leading-11 desktop:min-w-32 text-center desktop:mr-5 font-OPPOSans-B text-bgc">
+                              点读版
+                            </div> -->
           <div v-for="(tag, _index) in route.query.type === CategoryEnums.DIANDUBAO ? data.tags : data.product_tags"
             :key="_index"
             class="tag-bg h-39 min-w-110 mr-17 leading-39 desktop:h-11 desktop:leading-11 desktop:min-w-32 text-center desktop:mr-5 font-OPPOSans-B text-[#0000FF]">
