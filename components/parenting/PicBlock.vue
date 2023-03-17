@@ -24,7 +24,7 @@ onMounted(() => {
       class="under-bg-yellow text-41 desktop:text-19 text-[#0000ff] pr-20 desktop:pr-10 bg-contain bg-no-repeat bg-bottom  font-OPPOSans-H">
       “育”见成长
     </div>
-    <div class="text-22 desktop:text-10 text-[#666] text-center mt-30 desktop:mt-15 leading-39 desktop:leading-14">
+    <div class="text-22 desktop:text-10 text-[#666] text-center mt-30 desktop:mt-15 leading-39 desktop:leading-18">
       如果说绘本中藏着最纯粹的爱，那亲子共读，<br class="desktop:hidden">
       一定承载着孩子最宝贵的童年成长记忆。<br>
       小彼恩倾情推出#育见成长#系列专栏，与你一起共赏亲子阅读过程中，<br class="desktop:hidden">
@@ -60,7 +60,7 @@ onMounted(() => {
         src="/img/parenting/arrow-right.png" @click="navigateTo('/parenting/grow_list')">
     </div>
     <img class="w-167 h-103 desktop:w-191 desktop:h-89 absolute -left-44 -top-60 desktop:left-0  desktop:top-90"
-      src="/img/parenting/mobile/point-bg.png">
+      src="/img/download/left-point.gif">
   </div>
 </template>
 

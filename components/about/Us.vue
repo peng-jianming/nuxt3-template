@@ -35,14 +35,14 @@ const pageConfig = {
           {{ item }}
         </p>
       </div>
-      <img class="mt-25 w-657 h-138" src="/img/about/mobile/about-me-bg.png" alt="">
+      <img class="mt-25 w-657 h-138" src="/img/about/mobile/about-me-bg.gif" alt="">
     </div>
     <div class="mt-88">
       <div class="vision-bg w-589 h-119 ml-82 relative">
-        <div class="text-33 text-bgc w-66 absolute left-59 top-22 z-10 leading-38 font-OPPOSans-H">
+        <div class="text-33 text-bgc w-66 absolute left-50 top-22 z-10 leading-38 font-OPPOSans-H">
           {{ pageConfig.tag[0].title }}
         </div>
-        <div class="text-black text-25 absolute top-80 right-25">
+        <div class="text-black text-25 absolute top-60 right-25">
           {{ pageConfig.tag[0].desc }}
         </div>
       </div>
@@ -50,15 +50,15 @@ const pageConfig = {
         <div class="text-33 text-primary absolute -right-31 top-109 z-10 leading-38 font-OPPOSans-H">
           {{ pageConfig.tag[1].title }}
         </div>
-        <div class="text-black text-25 absolute top-98 left-25">
+        <div class="text-black text-25 absolute top-95 left-25">
           {{ pageConfig.tag[1].desc }}
         </div>
       </div>
       <div class="slogan-bg w-489 h-128 ml-120 mt-27 relative">
-        <div class="text-33 text-[#FF0085] absolute left-138 top-51 w-66 z-10 leading-38 font-OPPOSans-H">
+        <div class="text-33 text-[#FF0085] absolute left-130 top-42 w-66 z-10 leading-38 font-OPPOSans-H">
           {{ pageConfig.tag[2].title }}
         </div>
-        <div class="text-black text-25 absolute top-85 right-27">
+        <div class="text-black text-25 absolute top-80 right-27">
           {{ pageConfig.tag[2].desc }}
         </div>
       </div>
@@ -111,22 +111,22 @@ const pageConfig = {
 
 <style scoped>
 .about-me-bg {
-  background: url('/img/about/about-me-bg.png') no-repeat center top;
+  background: url('/img/about/about-me-bg.gif') no-repeat center top;
   background-size: cover;
 }
 
 .vision-bg {
-  background: url('/img/about/mobile/vision-bg.png') no-repeat center top;
+  background: url('/img/about/mobile/vision-bg.gif') no-repeat center top;
   background-size: cover;
 }
 
 .mission-bg {
-  background: url('/img/about/mobile/mission-bg.png') no-repeat center top;
+  background: url('/img/about/mobile/mission-bg.gif') no-repeat center top;
   background-size: cover;
 }
 
 .slogan-bg {
-  background: url('/img/about/mobile/slogan-bg.png') no-repeat center top;
+  background: url('/img/about/mobile/slogan-bg.gif') no-repeat center top;
   background-size: cover;
 }
 </style>

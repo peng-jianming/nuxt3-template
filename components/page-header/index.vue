@@ -69,12 +69,12 @@ const config: IMenu[] = [
 
 <template>
   <!-- 移动端 -->
-  <div class="fixed z-50 left-0 top-0 h-150 w-full bg-bgc px-40 desktop:hidden">
-    <img class="mx-auto mt-70 w-258 h-69" src="/img/header/mobile-logo.png" alt="小彼恩" @click="navigateTo('/')">
+  <div class="fixed z-50 left-0 top-0 h-100 w-full bg-bgc px-40 desktop:hidden">
+    <img class="mx-auto mt-20 w-258 h-69" src="/img/header/mobile-logo.png" alt="小彼恩" @click="navigateTo('/')">
     <page-header-mobile-menu :config="config" />
   </div>
   <!-- pc端 -->
-  <div
+  <div 
     class="h-50 max-w-672 items-center justify-between absolute w-full top-0 z-50 left-1/2 -translate-x-[50%] hidden desktop:flex">
     <h1>
       <a href="/" class="title-bg-logo block w-88 h-47 text-8 -indent-[9999px]">小彼恩</a>

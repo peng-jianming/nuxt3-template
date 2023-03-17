@@ -13,7 +13,8 @@ useHead({
 
 // 列表参数
 const options = ref<any>({
-  keywords: ''
+  keywords: '',
+  per_page: 10
 })
 // 缓存列表请求方法等
 const listParams = ref<any>()
@@ -69,7 +70,7 @@ const handleChange = (level: number, name: string, type: CategoryEnums, id: numb
 <template>
   <!-- 移动端 -->
   <div class="desktop:hidden">
-    <mobile-search v-model="options.keywords" class="bg-bgc px-30 pt-200 pb-50" placeholder="搜索书名"
+    <mobile-search v-model="options.keywords" class="bg-bgc px-30 pt-150 pb-50" placeholder="搜索书名"
       @search="listParams.loadData(true)" />
     <div class="mobile-category">
       <!-- 菜单 -->
@@ -129,7 +130,7 @@ const handleChange = (level: number, name: string, type: CategoryEnums, id: numb
             </template>
           </van-list>
         </div>
-        <img v-else class="w-289 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2" src="/img/empty.png" alt="">
+        <img v-else class="w-289 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2" src="/img/empty.gif" alt="">
       </div>
     </div>
   </div>
@@ -204,7 +205,7 @@ const handleChange = (level: number, name: string, type: CategoryEnums, id: numb
             </template>
           </van-list>
         </div>
-        <img v-else class="w-226 absolute top-100 left-1/2 -translate-x-1/2" src="/img/empty.png" alt="">
+        <img v-else class="w-226 absolute top-100 left-1/2 -translate-x-1/2" src="/img/empty.gif" alt="">
       </div>
     </div>
   </div>

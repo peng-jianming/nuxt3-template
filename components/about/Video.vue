@@ -32,7 +32,7 @@ const pageConfig = {
         class="about-video-player w-full h-full rounded-10  overflow-hidden" loop :controls="false" poster="/img/about/about-poster.png"
       />
       <img class="w-74 h-118 absolute -left-43 -top-2" src="/img/about/video-bg.png">
-      <img class="w-103 h-88 absolute -left-25 -bottom-29" src="/img/about/fox.png">
+      <img class="w-103 h-88 absolute -left-25 -bottom-29" src="/img/about/fox.gif">
     </div>
     <div class="text-10 text-[#666] text-center" v-html="pageConfig.desc" />
   </div>

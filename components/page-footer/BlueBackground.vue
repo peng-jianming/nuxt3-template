@@ -26,7 +26,7 @@
 }
 
 .mobile-footer-blue-bg {
-  background: url('/img/footer/mobile-page-footer-blue.png') no-repeat center bottom;
+  background: url('/img/footer/mobile-page-footer-blue.gif') no-repeat center bottom;
   background-size: cover;
 }
 </style>

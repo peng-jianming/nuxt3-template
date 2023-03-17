@@ -26,7 +26,7 @@
 }
 
 .mobile-footer-red-bg {
-    background: url('/img/footer/mobile-page-footer-red.png') no-repeat center bottom;
+    background: url('/img/footer/mobile-page-footer-red.gif') no-repeat center bottom;
     background-size: cover;
 }
 </style>

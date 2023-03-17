@@ -24,7 +24,7 @@ const innerIsShow = computed({
 </script>
 
 <template>
-  <div v-if="innerIsShow" class="fixed top-0 left-0 w-[100vw] h-[100vh] overflow-auto z-[999] bg-[rgba(0,0,0,0.5)]">
+  <div v-if="innerIsShow" class="fixed top-0 left-0 w-[100vw] h-[100vh] overflow-auto z-[999] bg-[rgba(0,0,0,0.8)]">
     <div class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2">
       <div class="absolute w-610 h-340 left-25 top-95 desktop:w-390 desktop:h-215 desktop:left-15 desktop:top-60">
         <video-player :src="props.src!" autoplay>

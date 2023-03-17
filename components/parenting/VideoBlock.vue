@@ -24,7 +24,7 @@ const handleOpenDialog = (bg: string, src: string) => {
         {{
           item.title }}
       </div>
-      <div class="text-22 desktop:text-10 text-[#666] text-center mt-30 desktop:mt-15 leading-39 desktop:leading-14"
+      <div class="text-22 desktop:text-10 text-[#666] text-center mt-30 desktop:mt-15 leading-39 desktop:leading-18"
         v-html="item.desc" />
       <!-- 移动端 -->
       <div class="desktop:hidden">

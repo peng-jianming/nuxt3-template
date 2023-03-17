@@ -27,7 +27,7 @@ const { loadData, list } = useList<IlistItem>(getHelps, options)
 
 <template>
   <mobile-search
-    v-model="options.title" class="desktop:hidden bg-bgc px-30 pt-200 pb-40" placeholder="搜索问题"
+    v-model="options.title" class="desktop:hidden bg-bgc px-30 pt-150 pb-40" placeholder="搜索问题"
     @search="loadData(true)"
   />
   <div class="relative h-750 mt-50 desktop:mt-90 desktop:h-450">
@@ -42,7 +42,7 @@ const { loadData, list } = useList<IlistItem>(getHelps, options)
       class="w-650 absolute -top-40 -left-90 desktop:w-400 desktop:top-30 desktop:-left-20"
       src="/img/service-support/bubble.gif" alt=""
     >
-    <img class="w-407 absolute right-0 top-400 desktop:hidden" src="/img/service-support/hand.png" alt="">
+    <img class="w-407 absolute right-0 top-400 desktop:hidden" src="/img/service-support/hand.gif" alt="">
     <img class="hidden desktop:block w-383 absolute right-0 top-40" src="/img/service-support/hand-pc.png" alt="">
     <div class="absolute top-170 left-130 desktop:top-160">
       <template v-if="list.length">
@@ -56,7 +56,7 @@ const { loadData, list } = useList<IlistItem>(getHelps, options)
           <span>{{ item.title }}</span>
         </p>
       </template>
-      <img v-else class="w-150 -ml-20 mt-30" src="/img/empty.png" alt="">
+      <img v-else class="w-150 -ml-20 mt-30" src="/img/empty.gif" alt="">
     </div>
   </div>
 </template>

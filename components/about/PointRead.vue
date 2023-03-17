@@ -100,7 +100,7 @@ const pageConfig = {
 
 <style scoped>
 .point-reading-bg {
-    background: url('/img/about/point-reading-bg.png') no-repeat center top;
+    background: url('/img/about/point-reading-bg.gif') no-repeat center top;
     background-size: cover;
 }
 </style>

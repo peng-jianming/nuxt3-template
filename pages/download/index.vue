@@ -18,7 +18,7 @@ useHead({
 
 <template>
   <!-- 移动端 -->
-  <div class="desktop:hidden mt-150 -mb-150 relative">
+  <div class="desktop:hidden mt-100 -mb-150 relative">
     <img class="w-496 mx-auto py-52 relative z-10" src="/img/download/mobile/phone.png" alt="">
     <img class="w-688 absolute top-316 left-18 z-10" src="/img/download/mobile/hand.png" alt="">
     <!-- 手机设备切换成图片 -->

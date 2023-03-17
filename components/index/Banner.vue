@@ -2,7 +2,7 @@
   <div>
     <!-- 移动端 -->
     <div class="relative desktop:hidden overflow-hidden">
-      <img class="desktop:hidden w-full mt-150" src="/img/index/mobile/banner.png">
+      <img class="desktop:hidden w-full mt-100" src="/img/index/mobile/banner.png">
       <img class="w-596 h-262 m-auto mt-40" src="/img/index/mobile/data-bg.png">
       <img class="w-320 absolute -right-135 top-600" src="/img/index/data-cloud-bg.gif">
     </div>

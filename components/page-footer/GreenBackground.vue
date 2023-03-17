@@ -15,7 +15,7 @@
     background-size: cover;
 }
 .mobile-footer-green-bg {
-    background: url('/img/footer/mobile-page-footer-green.png') no-repeat center top;
+    background: url('/img/footer/mobile-page-footer-green.gif') no-repeat center top;
     background-size: cover;
 }
 </style>
