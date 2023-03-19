@@ -41,7 +41,7 @@ useHead({
       <div class="ml-37 mt-13 flex flex-col">
         <van-popover v-model:show="showMobileIosPopover" placement="bottom">
           <div>
-            <img src="https://oss.xiaobien.com/static/images/www-xbe/download-qrcode.png">
+            <img src="https://oss.xiaobien.com/static/images/www-xbe/download-qrcode.png" class="w-[118px]">
           </div>
           <template #reference>
             <div
@@ -54,7 +54,7 @@ useHead({
         </van-popover>
         <van-popover v-model:show="showMobileAndroidPopover" placement="bottom">
           <div>
-            <img src="https://oss.xiaobien.com/static/images/www-xbe/download-qrcode.png">
+            <img src="https://oss.xiaobien.com/static/images/www-xbe/download-qrcode.png" class="w-[118px]">
           </div>
           <template #reference>
             <div
@@ -85,7 +85,7 @@ useHead({
         <div class="text-9 flex mb-8">
           <van-popover v-model:show="showIosPopover" placement="bottom">
             <div>
-              <img src="https://oss.xiaobien.com/static/images/www-xbe/download-qrcode.png">
+              <img src="https://oss.xiaobien.com/static/images/www-xbe/download-qrcode.png" class="w-[118px]">
             </div>
             <template #reference>
               <div
@@ -99,7 +99,7 @@ useHead({
           </van-popover>
           <van-popover v-model:show="showAndroidPopover" placement="bottom">
             <div>
-              <img src="https://oss.xiaobien.com/static/images/www-xbe/download-qrcode.png">
+              <img src="https://oss.xiaobien.com/static/images/www-xbe/download-qrcode.png" class="w-[118px]">
             </div>
             <template #reference>
               <div

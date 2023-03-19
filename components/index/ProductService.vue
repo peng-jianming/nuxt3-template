@@ -22,10 +22,10 @@ const showMobileAndroidPopover = ref(false)
         <img class="w-95 h-95 mb-33" src="/img/download/mobile/logo.png">
         <van-popover v-model:show="showMobileIosPopover" placement="bottom">
           <div>
-            <img src="https://oss.xiaobien.com/static/images/www-xbe/download-qrcode.png" class="qrcode">
+            <img src="https://oss.xiaobien.com/static/images/www-xbe/download-qrcode.png" class="w-[118px]">
           </div>
           <template #reference>
-            <div class=" w-154 h-64  text-24 pl-25 leading-68 mb-21 font-OPPOSans-M"
+            <div class=" w-154 h-64  text-24 pl-25 leading-68 font-OPPOSans-M"
               :class="[showMobileIosPopover ? 'ios-bg text-bgc' : 'android-bg text-primary']">
               IOS下载
             </div>
@@ -33,10 +33,10 @@ const showMobileAndroidPopover = ref(false)
         </van-popover>
         <van-popover v-model:show="showMobileAndroidPopover" placement="bottom">
           <div>
-            <img src="https://oss.xiaobien.com/static/images/www-xbe/download-qrcode.png" class="qrcode">
+            <img src="https://oss.xiaobien.com/static/images/www-xbe/download-qrcode.png" class="w-[118px]">
           </div>
           <template #reference>
-            <div class="w-154 h-64 text-24  pl-25 leading-68 font-OPPOSans-M"
+            <div class="w-154 h-64 text-24 mt-21 pl-25 leading-68 font-OPPOSans-M"
               :class="[showMobileAndroidPopover ? 'ios-bg text-bgc' : 'android-bg text-primary']">
               安卓下载
             </div>
@@ -61,7 +61,7 @@ const showMobileAndroidPopover = ref(false)
         <div class="text-9 flex mb-8">
           <van-popover v-model:show="showIosPopover" placement="bottom">
             <div>
-              <img src="https://oss.xiaobien.com/static/images/www-xbe/download-qrcode.png" class="qrcode">
+              <img src="https://oss.xiaobien.com/static/images/www-xbe/download-qrcode.png" class="w-[118px]">
             </div>
             <template #reference>
               <div class=" pl-10 cursor-pointer  w-58 h-24 leading-25 font-OPPOSans-M"
@@ -73,7 +73,7 @@ const showMobileAndroidPopover = ref(false)
           </van-popover>
           <van-popover v-model:show="showAndroidPopover" placement="bottom">
             <div>
-              <img src="https://oss.xiaobien.com/static/images/www-xbe/download-qrcode.png" class="qrcode">
+              <img src="https://oss.xiaobien.com/static/images/www-xbe/download-qrcode.png" class="w-[118px]">
             </div>
             <template #reference>
               <div class=" pl-10 cursor-pointer w-58 h-24 leading-25 ml-9 font-OPPOSans-M"
