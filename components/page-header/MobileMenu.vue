@@ -20,9 +20,11 @@ const handleLinkTo = (url: string) => {
 
 <template>
   <img class="w-41 h-33 absolute right-37 top-45" src="/img/header/menu-btn.png" alt="" @click.stop="isShow = !isShow">
-  <div ref="menuRef"
+  <div
+    ref="menuRef"
     class="transition-all duration-300 fixed right-0 w-412 top-100 bg-bgc z-[1001] border-t-1 border-primary overflow-auto"
-    style="height: calc(100% - 1.33rem)" :class="[isShow ? 'translate-x-0' : 'translate-x-750']">
+    style="height: calc(100% - 1.33rem)" :class="[isShow ? 'translate-x-0' : 'translate-x-750']"
+  >
     <div class="px-80 py-120 bg-bgc ">
       <div v-for="(item, index) in config" :key="index" class=" mb-30">
         <!-- 一级菜单 -->

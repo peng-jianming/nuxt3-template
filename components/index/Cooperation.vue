@@ -40,13 +40,17 @@ const list = [
     </div>
     <!-- 移动端 -->
     <div class="desktop:hidden w-600 flex flex-wrap mt-45 mb-60">
-      <img v-for="(item, index) in list" :key="index" :src="item"
-        class="cooperation-logo w-125 h-125 rounded-10 shadow-input mb-32 ml-32">
+      <img
+        v-for="(item, index) in list" :key="index" :src="item"
+        class="cooperation-logo w-125 h-125 rounded-10 shadow-input mb-32 ml-32"
+      >
     </div>
     <!-- PC端 -->
     <div class="hidden desktop:flex w-594 flex-wrap relative z-20 justify-between mt-15 mb-50">
-      <img v-for="(item, index) in list" :key="index" :src="item"
-        class="pc-cooperation-logo w-62 h-62 rounded-15 shadow-input mb-10 ml-10">
+      <img
+        v-for="(item, index) in list" :key="index" :src="item"
+        class="pc-cooperation-logo w-62 h-62 rounded-15 shadow-input mb-10 ml-10"
+      >
     </div>
   </div>
 </template>

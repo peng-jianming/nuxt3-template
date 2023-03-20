@@ -26,37 +26,32 @@ const { loadData, list } = useList<IlistItem>(getHelps, options)
 </script>
 
 <template>
-  <mobile-search
-    v-model="options.title" class="desktop:hidden bg-bgc px-30 pt-150 pb-40" placeholder="搜索问题"
-    @search="loadData(true)"
-  />
+  <mobile-search v-model="options.title" class="desktop:hidden bg-bgc px-30 pt-150 pb-40" placeholder="搜索问题"
+    @search="loadData(true)" />
   <div class="relative h-750 mt-50 desktop:mt-90 desktop:h-450">
     <div
-      class=" absolute top- 0 left-1/2 -translate-x-1/2 px-10 text-33 desktop:text-19 mobile-under-bg-yellow-four text-[#001CF2] font-OPPOSans-H"
-    >
+      class=" absolute top- 0 left-1/2 -translate-x-1/2 px-10 text-33 desktop:text-19 mobile-under-bg-yellow-four text-[#001CF2] font-OPPOSans-H">
       服务与支持
     </div>
     <search v-model="options.title" class="hidden desktop:block absolute left-533 top-40 z-50" @search="loadData(true)" />
     <img class="absolute -right-50 -top-60 w-299 desktop:-right-80 desktop:-top-85" src="/img/right-cloud-bg.gif" alt="">
-    <img
-      class="w-650 absolute -top-40 -left-90 desktop:w-400 desktop:top-30 desktop:-left-20"
-      src="/img/service-support/bubble.gif" alt=""
-    >
+    <img class="w-650 absolute -top-40 -left-90 desktop:w-400 desktop:top-30 desktop:-left-20"
+      src="/img/service-support/bubble.gif" alt="">
     <img class="w-407 absolute right-0 top-400 desktop:hidden" src="/img/service-support/hand.gif" alt="">
     <img class="hidden desktop:block w-383 absolute right-0 top-40" src="/img/service-support/hand-pc.png" alt="">
-    <div class="absolute top-170 left-130 desktop:top-160">
-      <template v-if="list.length">
-        <p
-          v-for="(item, index) in list" :key="index"
-          class="text-20  desktop:text-10 mb-8 text-[#666] flex cursor-pointer"
-          @click="navigateTo(`/service-support/detail/${item.id}`)"
-        >
-          <img class="h-21  mr-10 desktop:hidden" src="/img/service-support/arrow.png" alt="">
-          <img class="h-13 mr-10 hidden desktop:block" src="/img/service-support/pc-arrow.png" alt="">
-          <span>{{ item.title }}</span>
-        </p>
-      </template>
-      <img v-else class="w-150 -ml-20 mt-30" src="/img/empty.gif" alt="">
-    </div>
+    <client-only>
+      <div class="absolute top-170 left-130 desktop:top-160">
+        <template v-if="list.length">
+          <p v-for="(item, index) in list" :key="index"
+            class="text-20  desktop:text-10 mb-8 text-[#666] flex cursor-pointer"
+            @click="navigateTo(`/service-support/detail/${item.id}`)">
+            <img class="h-21  mr-10 desktop:hidden" src="/img/service-support/arrow.png" alt="">
+            <img class="h-13 mr-10 hidden desktop:block" src="/img/service-support/pc-arrow.png" alt="">
+            <span>{{ item.title }}</span>
+          </p>
+        </template>
+        <img v-else class="w-150 -ml-20 mt-30" src="/img/empty.gif" alt="">
+      </div>
+    </client-only>
   </div>
 </template>

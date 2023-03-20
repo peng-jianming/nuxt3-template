@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { getVideoList, IVideoItem } from '~/assets/api/parenting';
+import type { IVideoItem } from '~/assets/api/parenting'
+import { getVideoList } from '~/assets/api/parenting'
 import { pageConfig } from '~/components/parenting/config'
 definePageMeta({
   footerColor: 'red',
@@ -8,20 +9,19 @@ definePageMeta({
 const route = useRoute()
 const currentPageConfig = pageConfig[route.params.name as keyof typeof pageConfig]
 
-
 const breadcrumbConfig = ref<IBreadcrumbItem[]>([
   {
     title: '品质育儿研究所',
     link: '/parenting',
   },
   {
-    title: currentPageConfig.title
+    title: currentPageConfig.title,
   },
 ])
 
 const options = ref({
   video_position: currentPageConfig.video_position,
-  title: ''
+  title: '',
 })
 const { loadData, list, finished, loading, curPage } = useList<IVideoItem>(getVideoList, options)
 
@@ -52,8 +52,10 @@ const handleOpenDialog = (src: string) => {
       <!-- 移动端 -->
       <div class="desktop:hidden">
         <van-list v-model:loading="loading" :finished="finished" @load="onload">
-          <div v-for="(item, index) in list" :key="index" class="px-40 mb-40"
-            @click="handleOpenDialog(item.resource_url)">
+          <div
+            v-for="(item, index) in list" :key="index" class="px-40 mb-40"
+            @click="handleOpenDialog(item.resource_url)"
+          >
             <img class=" w-672 h-384 rounded-25 mb-35" :src="item.resource_cover" alt="">
             <div class="text-[#0000FF] text-36 font-OPPOSans-B custom-under-line line-clamp-1">
               {{ item.title }}
@@ -81,9 +83,11 @@ const handleOpenDialog = (src: string) => {
       <div class="hidden desktop:block relative z-10">
         <van-list v-model:loading="loading" :finished="finished" @load="onload">
           <div class="flex flex-wrap">
-            <div v-for="(item, index) in list" :key="index"
+            <div
+              v-for="(item, index) in list" :key="index"
               class="list-items  w-182 h-139 rounded-16 cursor-pointer overflow-hidden shadow-input mb-45 mr-18"
-              @click="handleOpenDialog(item.resource_url)">
+              @click="handleOpenDialog(item.resource_url)"
+            >
               <img class="w-182 h-102" :src="item.resource_cover" alt="">
               <div class="h-37 text-8 text-[#666] bg-white overflow-hidden px-16 py-6 line-clamp-2">
                 {{ item.resource_desc }}

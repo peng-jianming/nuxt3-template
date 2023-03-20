@@ -2,12 +2,6 @@ import type { UseFetchOptions } from '#app'
 // const baseURL = 'https://www.xiaobien.com/xiaobien-api/'
 const baseURL = 'http://dev-www.xiaobien.net/xiaobien-api/'
 
-interface responseData<T> {
-  code: string
-  message: string
-  data: T
-}
-
 export async function useHttp<T = any>(options: UseFetchOptions<T> & { url: string }) {
   options.baseURL = options.baseURL || baseURL
   options.headers = {

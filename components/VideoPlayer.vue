@@ -24,12 +24,6 @@ const videoWrapStyles = computed<CSSProperties>(() => {
   }
 })
 
-const handlePlay = () => {
-  if (!videoPlayer)
-    return
-  videoPlayer.play()
-}
-
 const initVideo = () => {
   // https://gitcode.gitcode.host/docs-cn/video.js-docs-cn/docs/guides/options.html
   const options: VideoJsPlayerOptions = {
@@ -59,13 +53,14 @@ const initVideo = () => {
 onMounted(() => {
   initVideo()
 })
-
 </script>
 
 <template>
   <div :style="videoWrapStyles">
-    <video id="my-player" ref="videoRef" playsinline webkit-playsinline fullscreen class="video-js"
-      style="width: 100%;height: 100%;">
+    <video
+      id="my-player" ref="videoRef" playsinline webkit-playsinline fullscreen class="video-js"
+      style="width: 100%;height: 100%;"
+    >
       <source :src="src">
     </video>
     <slot v-if="!isPlayed" name="video-play-btn" />

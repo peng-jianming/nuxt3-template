@@ -22,16 +22,16 @@ export default defineNuxtConfig({
     },
   },
   sitemap: {
-    hostname: 'https://test.com',
+    hostname: 'https://www.xiaobien.com',
     urls: [
-      { url: '/parenting/aaa-list', changefreq: 'monthly', priority: 0.3 },
-      { url: '/parenting/ccc-list', changefreq: 'monthly', priority: 0.3 },
-      { url: '/parenting/bbb-list', changefreq: 'monthly', priority: 0.3 },
-      { url: '/parenting/bbb-list', changefreq: 'monthly', priority: 0.3 },
-    ]
+      { url: '/parenting/grow_list', changefreq: 'monthly', priority: 0.3 },
+      { url: '/parenting/happy_list', changefreq: 'monthly', priority: 0.3 },
+      { url: '/parenting/expert_list', changefreq: 'monthly', priority: 0.3 },
+      { url: '/parenting/method_list', changefreq: 'monthly', priority: 0.3 },
+    ],
   },
   routeRules: {
     // modify the sitemap.xml entry for specific URLs
-    '**': { sitemap: { changefreq: 'monthly', priority: 0.3 } }
-  }
+    '**': { sitemap: { changefreq: 'monthly', priority: 0.3 } },
+  },
 })

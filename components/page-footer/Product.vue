@@ -75,7 +75,8 @@ const config = [
   },
 ]
 const handleLink = (url?: string) => {
-  if (url) location.href = url
+  if (url)
+    location.href = url
 }
 </script>
 
@@ -86,14 +87,16 @@ const handleLink = (url?: string) => {
         {{ label }}
       </div>
       <div v-if="children">
-        <div v-for="item, _index in children" :key="_index" class="cursor-pointer text-8 text-white leading-14"
-          @click="handleLink(item.link)">
+        <div
+          v-for="item, _index in children" :key="_index" class="cursor-pointer text-8 text-white leading-14"
+          @click="handleLink(item.link)"
+        >
           {{
             item.label
           }}
         </div>
       </div>
-      <component v-else :is="component" />
+      <component :is="component" v-else />
     </div>
   </div>
 </template>

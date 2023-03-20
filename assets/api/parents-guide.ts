@@ -31,9 +31,9 @@ export interface IGetParentsGuideDetailRequest {
 export interface IGetParentsGuideDetailResponse {
   title: string
   online_at: string
-  brand_desc: string,
-  seo_title: string,
-  seo_keywords: string,
+  brand_desc: string
+  seo_title: string
+  seo_keywords: string
   seo_description: string
 }
 

@@ -10,6 +10,8 @@
     // Enforce typesafety for Tailwind CSS classnames
     // https://github.com/francoismassart/eslint-plugin-tailwindcss/blob/master/docs/rules/no-custom-classname.md
     "tailwindcss/no-custom-classname": 0,
-    "tailwindcss/no-contradicting-classname": 0
+    "tailwindcss/no-contradicting-classname": 0,
+    "no-mixed-operators": 0,
+    "no-console": 0
   }
 }

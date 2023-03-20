@@ -19,9 +19,11 @@ onMounted(() => {
 
 <template>
   <div
-    class=" bg-no-repeat bg-cover bg-mobile-contact-us desktop:bg-contact-us  mt-11 w-665 h-421 desktop:w-531 desktop:h-307 m-auto relative">
+    class=" bg-no-repeat bg-cover bg-mobile-contact-us desktop:bg-contact-us  mt-11 w-665 h-421 desktop:w-531 desktop:h-307 m-auto relative"
+  >
     <div
-      class="mobile-under-bg-blue-four desktop:under-bg-blue-four text-33 desktop:text-20 text-bgc  absolute left-1/2 -translate-x-[50%] top-38 desktop:top-51 px-7 font-OPPOSans-H">
+      class="mobile-under-bg-blue-four desktop:under-bg-blue-four text-33 desktop:text-20 text-bgc  absolute left-1/2 -translate-x-[50%] top-38 desktop:top-51 px-7 font-OPPOSans-H"
+    >
       联系我们
     </div>
     <div class="flex absolute left-42 bottom-48 desktop:bottom-30 items-center">

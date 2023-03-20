@@ -34,43 +34,43 @@ const product = [
 <template>
   <div class="mt-80 relative desktop:mt-85 flex flex-col items-center">
     <div
-      class="mobile-under-bg-green-four text-42 desktop:text-20 desktop:mb-15 desktop:px-10  text-[#0000ff] px-20 font-OPPOSans-H"
-    >
+      class="mobile-under-bg-green-four text-42 desktop:text-20 desktop:mb-15 desktop:px-10  text-[#0000ff] px-20 font-OPPOSans-H">
       产品系列
     </div>
-    <!-- 移动端 -->
-    <div class="desktop:hidden ">
-      <img class="absolute w-172 h-566 -left-55 -top-140" style="object-fit: cover;" src="/img/index/mobile/bug-bg.gif" alt="">
-      <div class="relative z-10 desktop:hidden">
-        <div v-for="(item, index) in product" :key="index" class="rounded-25 shadow-input overflow-hidden mt-40"  @click="navigateTo(item.url)">
-          <img class="w-672 h-327" :src="item.img" alt="">
-          <div class="text-right h-57 text-28 leading-57 text-bgc bg-primary px-24">
-            {{ item.text }} >>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- pc端 -->
-    <div class="hidden desktop:flex ">
-      <div class="flex m-auto w-600 flex-wrap justify-between z-10">
-        <div
-          v-for="(item, index) in product" :key="index"
-          class="w-188 h-151 rounded-12 mt-13 group overflow-hidden cursor-pointer"
-        >
-          <div class="relative z-20 w-full h-full" @click="navigateTo(item.url)">
-            <img :src="item.img" alt="" style="object-fit: cover;" class="w-full h-full">
-            <div
-              class="opacity-0 group-hover:opacity-100 cursor-pointer  absolute bottom-0 left-0 h-34 w-full bg-primary z-10 leading-34 text-11 text-bgc pr-10 text-right"
-            >
+    <client-only>
+      <!-- 移动端 -->
+      <div class="desktop:hidden ">
+        <img class="absolute w-172 h-566 -left-55 -top-140" style="object-fit: cover;" src="/img/index/mobile/bug-bg.gif"
+          alt="">
+        <div class="relative z-10 desktop:hidden">
+          <div v-for="(item, index) in product" :key="index" class="rounded-25 shadow-input overflow-hidden mt-40"
+            @click="navigateTo(item.url)">
+            <img class="w-672 h-327" :src="item.img" alt="">
+            <div class="text-right h-57 text-28 leading-57 text-bgc bg-primary px-24">
               {{ item.text }} >>
             </div>
           </div>
-          <img class="transition-all duration-500 absolute" :class="[item.bgClass]" :src="item.bg" alt="">
-        </div>
-        <div class="w-395 h-151 rounded-12 overflow-hidden mt-13 relative">
-          <img class="w-full h-full" src="/img/index/product-banner.png">
         </div>
       </div>
-    </div>
+      <!-- pc端 -->
+      <div class="hidden desktop:flex ">
+        <div class="flex m-auto w-600 flex-wrap justify-between z-10">
+          <div v-for="(item, index) in product" :key="index"
+            class="w-188 h-151 rounded-12 mt-13 group overflow-hidden cursor-pointer">
+            <div class="relative z-20 w-full h-full" @click="navigateTo(item.url)">
+              <img :src="item.img" alt="" style="object-fit: cover;" class="w-full h-full">
+              <div
+                class="opacity-0 group-hover:opacity-100 cursor-pointer  absolute bottom-0 left-0 h-34 w-full bg-primary z-10 leading-34 text-11 text-bgc pr-10 text-right">
+                {{ item.text }} >>
+              </div>
+            </div>
+            <img class="transition-all duration-500 absolute" :class="[item.bgClass]" :src="item.bg" alt="">
+          </div>
+          <div class="w-395 h-151 rounded-12 overflow-hidden mt-13 relative">
+            <img class="w-full h-full" src="/img/index/product-banner.png">
+          </div>
+        </div>
+      </div>
+    </client-only>
   </div>
 </template>

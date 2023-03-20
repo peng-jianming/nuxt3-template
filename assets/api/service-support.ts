@@ -22,9 +22,9 @@ export const getHelps = (params: IGetHelpsRequest) => {
 export interface IGetHelpsDetailResponse {
   content: string
   online_time: string
-  title: string,
-  seo_title: string,
-  seo_keywords: string,
+  title: string
+  seo_title: string
+  seo_keywords: string
   seo_description: string
 }
 

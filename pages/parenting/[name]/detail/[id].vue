@@ -25,7 +25,7 @@ const breadcrumbConfig = ref<IBreadcrumbItem[]>([
   },
   {
     title: '“育”见成长',
-    link: `/parenting/grow_list`,
+    link: '/parenting/grow_list',
   },
   {
     title: data.title,
